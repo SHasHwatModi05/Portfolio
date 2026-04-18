@@ -1,32 +1,25 @@
-# 🚀 Shashwat Modi - Portfolio
+# 🚀 Shashwat Modi — Full Stack Developer | Cloud & DevOps
 
-Welcome to my personal developer portfolio 👨‍💻
-Built with modern technologies, animations, and cloud-ready architecture.
-
----
-
-## 🌐 Live Demo
-
-👉 https://main.d2td1wbb5wood6.amplifyapp.com
+🌐 **Live Portfolio:** https://main.d2td1wbb5wood6.amplifyapp.com
 
 ---
 
-## 📌 About Me
+## 👨‍💻 About Me
 
-Hi, I'm **Shashwat Modi**, a passionate **Full Stack Developer & Cloud/DevOps Enthusiast**.
+Hi, I'm **Shashwat Modi**, a **Full Stack Developer** with a strong interest in **Cloud & DevOps Engineering**.
 
-I specialize in building:
+I focus on building:
 
-* Scalable web applications
-* Cloud-based deployments (AWS)
-* CI/CD pipelines & automation
-* Clean UI with modern animations
+* Scalable and performant web applications
+* Cloud-native deployments using AWS
+* Automated CI/CD pipelines
+* Clean, modern UI with smooth animations
 
-Currently focused on mastering:
+Currently exploring:
 
-* AWS ☁️
-* Kubernetes ⚙️
-* DevOps pipelines 🚀
+* ☁️ AWS (Advanced Services)
+* ⚙️ Kubernetes & Containerization
+* 🚀 DevOps & System Design
 
 ---
 
@@ -41,31 +34,40 @@ Currently focused on mastering:
 
 ### ⚙️ Backend / Services
 
-* EmailJS (Contact Form)
-* Supabase (optional integration)
+* EmailJS (Contact Handling)
+* Supabase (Optional Integration)
 
 ### ☁️ Cloud & DevOps
 
-* AWS (EC2, S3)
+* AWS (S3, EC2, Amplify)
 * GitHub Actions (CI/CD)
 * Docker (Learning)
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
 * 🎨 Modern UI with animations
-* 📱 Fully responsive design
-* 📩 Working contact form (EmailJS)
-* 🌙 Dark / Light mode
-* ⚡ Fast performance (Vite)
-* 🔗 GitHub & LinkedIn integration
+* 📱 Fully responsive across devices
+* 📩 Functional contact form (EmailJS)
+* 🌙 Dark / Light mode toggle
+* ⚡ Optimized performance (Vite)
+* 🔗 Social integration (GitHub, LinkedIn)
+
+---
+
+## 🚀 Deployment & CI/CD
+
+* Hosted on **AWS Amplify**
+* Integrated **GitHub Actions pipeline**
+* Auto-deploy on every push to `main`
+* Build validation before deployment
 
 ---
 
 ## 📂 Project Structure
 
-```bash
+```
 portfolio/
 ├── src/
 │   ├── components/
@@ -80,8 +82,18 @@ portfolio/
 
 ---
 
-## 🤝 Connect With Me
+## 📬 Connect With Me
 
 * 💼 LinkedIn: https://www.linkedin.com/in/shashwat-modi-1b1435282
 * 💻 GitHub: https://github.com/SHasHwatModi05
-* 📧 Email: modiofficialwork@gmail.com
+* 📧 Email: [modiofficialwork@gmail.com](mailto:modiofficialwork@gmail.com)
+
+---
+
+## ⭐ Highlights
+
+* Built and deployed a production-ready portfolio using AWS
+* Implemented CI/CD pipeline with GitHub Actions
+* Focused on performance, UI/UX, and scalability
+
+---
