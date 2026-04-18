@@ -7,7 +7,7 @@ Built with modern technologies, animations, and cloud-ready architecture.
 
 ## 🌐 Live Demo
 
-👉 http://shashwatmodi-portfolio.s3-website.ap-south-1.amazonaws.com
+👉 https://main.d2td1wbb5wood6.amplifyapp.com
 
 ---
 
