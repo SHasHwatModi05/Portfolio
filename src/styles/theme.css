@@ -1,6 +1,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+
   --font-size: 16px;
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -47,43 +48,43 @@
 }
 
 .dark {
-  --background: #111827;
-  --background-gradient: #111827;
-  --foreground: #f9fafb;
-  --card: #1f2937;
-  --card-foreground: #f9fafb;
-  --popover: #1f2937;
-  --popover-foreground: #f9fafb;
-  --primary: #14b8a6;
+  --background: #0f172a;
+  --background-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #22c55e;
   --primary-foreground: #ffffff;
-  --secondary: #374151;
-  --secondary-foreground: #f9fafb;
-  --muted: #374151;
-  --muted-foreground: #9ca3af;
-  --accent: #14b8a6;
+  --secondary: #1e293b;
+  --secondary-foreground: #cbd5e1;
+  --muted: #1e293b;
+  --muted-foreground: #cbd5e1;
+  --accent: #22c55e;
   --accent-foreground: #ffffff;
-  --cyan: #14b8a6;
+  --cyan: #22c55e;
   --destructive: #f87171;
   --destructive-foreground: #ffffff;
-  --border: #374151;
-  --input: #374151;
-  --input-background: #1f2937;
-  --ring: #14b8a6;
+  --border: rgba(255, 255, 255, 0.05);
+  --input: rgba(255, 255, 255, 0.07);
+  --input-background: #1e293b;
+  --ring: #22c55e;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --chart-1: #14b8a6;
+  --chart-1: #22c55e;
   --chart-2: #10b981;
   --chart-3: #06b6d4;
   --chart-4: #fbbf24;
   --chart-5: #f472b6;
-  --sidebar: #1f2937;
-  --sidebar-foreground: #f9fafb;
-  --sidebar-primary: #14b8a6;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #22c55e;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #374151;
-  --sidebar-accent-foreground: #f9fafb;
-  --sidebar-border: #374151;
-  --sidebar-ring: #14b8a6;
+  --sidebar-accent: #0f172a;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: rgba(255, 255, 255, 0.05);
+  --sidebar-ring: #22c55e;
 }
 
 @theme inline {
@@ -133,13 +134,18 @@
   }
 
   body {
-    background: var(--background);
+    background: var(--background-gradient, var(--background));
     color: var(--foreground);
     font-family: var(--font-body);
     transition: background 0.3s ease, color 0.3s ease;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 

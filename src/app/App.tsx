@@ -63,11 +63,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background">
       <Toaster />
-      <ThemeToggle />
       <Navigation scrollToSection={scrollToSection} />
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden bg-gradient-to-br from-white via-primary/[0.02] to-white">
+      <section id="hero" className="relative flex items-center pt-20 md:pt-28 pb-20 overflow-hidden bg-gradient-to-br from-white via-primary/[0.02] to-white dark:from-transparent dark:via-transparent dark:to-transparent" style={{ minHeight: '80vh', justifyContent: 'center' }}>
         {/* Premium Background Effects */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           {/* Animated Gradient Blobs */}
@@ -94,16 +93,23 @@ export default function App() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(20,184,166,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(20,184,166,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
         </div>
 
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div
+          style={{
+            maxWidth: '1200px',
+            width: '100%',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '4rem' }}>
             {/* Left Content */}
-            <div className="space-y-8">
+            <div className="space-y-8" style={{ flex: 1, maxWidth: '600px' }}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                <h1 className="text-5xl md:text-7xl font-black text-[#0f172a] mb-6 tracking-tight leading-tight">
+                <h1 className="text-5xl md:text-7xl font-black text-[#0f172a] dark:text-[#f8fafc] mb-6 tracking-tight leading-tight">
                   Shashwat Modi
                   <motion.span
                     className="inline-block w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-primary to-emerald-400 rounded-full ml-2"
@@ -120,7 +126,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-3xl md:text-5xl font-bold text-[#0f172a] min-h-[80px]"
+                className="text-3xl md:text-5xl font-bold text-[#0f172a] dark:text-[#e2e8f0] min-h-[80px]"
               >
                 <TypingAnimation
                   roles={[
@@ -134,7 +140,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl"
+                className="text-lg md:text-xl text-slate-600 dark:text-[#94a3b8] leading-relaxed max-w-xl"
               >
                 I build scalable, high-performance applications and automate workflows using modern cloud and DevOps technologies.
               </motion.p>
@@ -146,20 +152,27 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="flex flex-wrap gap-4"
               >
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 bg-gradient-to-r from-primary to-emerald-500 text-white rounded-xl font-bold inline-flex items-center gap-3 hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 shadow-lg shadow-primary/20"
+                <a
+                  href="/Shashwat_Modi_Resume.pdf"
+                  download="Shashwat_Modi_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Download className="w-5 h-5" />
-                  Download Resume
-                </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-8 py-4 bg-gradient-to-r from-primary to-emerald-500 dark:bg-[#22c55e] dark:from-[#22c55e] dark:to-[#22c55e] text-white rounded-xl font-bold inline-flex items-center gap-3 hover:shadow-2xl hover:shadow-primary/40 dark:hover:bg-[#4ade80] transition-all duration-300 shadow-lg shadow-primary/20"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download Resume
+                  </motion.button>
+                </a>
 
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => scrollToSection('projects')}
-                  className="px-8 py-4 bg-white border-2 border-primary text-primary rounded-xl font-bold inline-flex items-center gap-3 hover:bg-primary hover:text-white hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+                  className="px-8 py-4 bg-white dark:bg-transparent border-2 border-[#22c55e] dark:border-[#22c55e] text-primary dark:text-[#22c55e] rounded-xl font-bold inline-flex items-center gap-3 hover:bg-primary hover:text-white hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
                 >
                   <FolderGit2 className="w-5 h-5" />
                   View Projects
@@ -174,10 +187,10 @@ export default function App() {
                 className="flex gap-4 pt-4"
               >
                 {[
-                  { icon: Github, href: `https://github.com/${githubUsername}`, label: 'GitHub' },
-                  { icon: Linkedin, href: 'https://www.linkedin.com/in/shashwat-modi-1b1435282/', label: 'LinkedIn' },
-                  { icon: Mail, href: 'mailto:modiiofficialwork@gmail.com', label: 'Email' },
-                  { icon: Instagram, href: 'https://www.instagram.com/shashwat_modi_?igsh=ZmM1ZGo3Y2gzbmZk', label: 'Instagram' }
+                  { icon: Github,    href: `https://github.com/${githubUsername}`,                                    label: 'GitHub',    color: '#333333' },
+                  { icon: Linkedin,  href: 'https://www.linkedin.com/in/shashwat-modi-1b1435282/',                   label: 'LinkedIn',  color: '#0077B5' },
+                  { icon: Mail,      href: 'mailto:modiiofficialwork@gmail.com',                                     label: 'Email',     color: '#EA4335' },
+                  { icon: Instagram, href: 'https://www.instagram.com/shashwat_modi_?igsh=ZmM1ZGo3Y2gzbmZk',       label: 'Instagram', color: '#E4405F' },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
@@ -189,10 +202,13 @@ export default function App() {
                     transition={{ duration: 0.4, delay: 1.1 + index * 0.1, type: "spring" }}
                     whileHover={{ scale: 1.15, y: -4 }}
                     whileTap={{ scale: 0.9 }}
-                    className="p-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group"
+                    className="p-3 bg-white/60 dark:bg-[#1e293b] backdrop-blur-sm border border-slate-200 dark:border-white/[0.06] rounded-xl hover:border-primary dark:hover:bg-[#334155] hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
                     aria-label={social.label}
                   >
-                    <social.icon className="w-6 h-6 text-slate-600 group-hover:text-primary transition-colors" />
+                    <social.icon
+                      className="w-6 h-6 transition-all duration-300"
+                      style={{ color: social.color }}
+                    />
                   </motion.a>
                 ))}
               </motion.div>
@@ -204,12 +220,13 @@ export default function App() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
               className="relative hidden lg:block"
+              style={{ flex: 1 }}
             >
               {/* DevOps Illustration */}
               <div className="relative w-full h-[500px]">
                 {/* Cloud Icon */}
                 <motion.div
-                  className="absolute top-10 left-10 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-200"
+                  className="absolute top-10 left-10 p-6 bg-white/80 dark:bg-[#1e293b] backdrop-blur-sm rounded-2xl shadow-xl border border-slate-200 dark:border-white/5"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 >
@@ -219,7 +236,7 @@ export default function App() {
 
                 {/* Docker Icon */}
                 <motion.div
-                  className="absolute top-40 right-20 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-200"
+                  className="absolute top-40 right-20 p-6 bg-white/80 dark:bg-[#1e293b] backdrop-blur-sm rounded-2xl shadow-xl border border-slate-200 dark:border-white/5"
                   animate={{ y: [0, 15, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
@@ -229,7 +246,7 @@ export default function App() {
 
                 {/* Kubernetes Icon */}
                 <motion.div
-                  className="absolute bottom-32 left-20 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-200"
+                  className="absolute bottom-32 left-20 p-6 bg-white/80 dark:bg-[#1e293b] backdrop-blur-sm rounded-2xl shadow-xl border border-slate-200 dark:border-white/5"
                   animate={{ y: [0, -15, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                 >
@@ -239,7 +256,7 @@ export default function App() {
 
                 {/* CI/CD Pipeline Icon */}
                 <motion.div
-                  className="absolute bottom-10 right-10 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-200"
+                  className="absolute bottom-10 right-10 p-6 bg-white/80 dark:bg-[#1e293b] backdrop-blur-sm rounded-2xl shadow-xl border border-slate-200 dark:border-white/5"
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 >

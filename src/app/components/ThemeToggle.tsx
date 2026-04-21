@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Sun, Moon } from 'lucide-react';
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+  inline?: boolean;
+}
+
+export function ThemeToggle({ inline = false }: ThemeToggleProps) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -33,12 +37,17 @@ export function ThemeToggle() {
     }
   };
 
+  // Inline variant: sits inside the navbar flex row, no fixed positioning
+  const positionClasses = inline
+    ? 'relative z-auto flex-shrink-0'
+    : 'fixed top-6 right-6 z-50';
+
   return (
     <motion.button
       onClick={toggleTheme}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed top-6 right-6 z-50 w-14 h-14 rounded-2xl bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-primary/50 transition-all shadow-lg hover:shadow-xl hover:shadow-primary/20"
+      className={`${positionClasses} w-11 h-11 rounded-2xl bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-primary/50 transition-all shadow-lg hover:shadow-xl hover:shadow-primary/20`}
       style={{
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
@@ -55,7 +64,7 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
         className="absolute"
       >
-        <Sun className="w-6 h-6 text-amber-500" />
+        <Sun className="w-5 h-5 text-amber-500" />
       </motion.div>
 
       <motion.div
@@ -68,7 +77,7 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
         className="absolute"
       >
-        <Moon className="w-6 h-6 text-primary" />
+        <Moon className="w-5 h-5 text-primary" />
       </motion.div>
     </motion.button>
   );
